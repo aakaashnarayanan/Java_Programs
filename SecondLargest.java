@@ -13,7 +13,7 @@ class SecondLargest{
         second = first;
         first = arr[j];
       }
-      else if(arr[j] < second)
+      else if(arr[j] > second)
       {
         second = arr[j];
       }
