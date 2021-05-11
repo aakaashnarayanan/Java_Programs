@@ -2,12 +2,14 @@
 class KnightTour {
   static int N = 8;
 
-  /* A utility function to check if i,j are valid indexes for N*N chessboard */static boolean isSafe(int x, int y,
+  /* A utility function to check if i,j are valid indexes for N*N chessboard */
+      static boolean isSafe(int x, int y,
       int sol[][]) {
     return (x >= 0 && x < N && y >= 0 && y < N && sol[x][y] == -1);
   }
 
-  /* A utility function to print solution matrix sol[N][N] */static void printSolution(int sol[][]) {
+  /* A utility function to print solution matrix sol[N][N] */
+  static void printSolution(int sol[][]) {
     for (int x = 0; x < N; x++) {
       for (int y = 0; y < N; y++)
         System.out.print(sol[x][y] + " ");
@@ -22,7 +24,8 @@ class KnightTour {
    */static boolean solveKT() {
     int sol[][] = new int[8][8];
 
-    /* Initialization of solution matrix */for (int x = 0; x < N; x++)
+    /* Initialization of solution matrix */
+    for (int x = 0; x < N; x++)
       for (int y = 0; y < N; y++)
         sol[x][y] = -1;
 
@@ -49,14 +52,16 @@ class KnightTour {
 
   /*
    * A recursive utility function to solve Knight Tour problem
-   */static boolean solveKTUtil(int x, int y, int movei, int sol[][], int xMove[], int yMove[]) {
+   */
+   static boolean solveKTUtil(int x, int y, int movei, int sol[][], int xMove[], int yMove[]) {
     int k, next_x, next_y;
     if (movei == N * N)
       return true;
 
     /*
      * Try all next moves from the current coordinate x, y
-     */for (k = 0; k < 8; k++) {
+     */
+     for (k = 0; k < 8; k++) {
       next_x = x + xMove[k];
       next_y = y + yMove[k];
       if (isSafe(next_x, next_y, sol)) {
